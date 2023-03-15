@@ -1,0 +1,8 @@
+this
+text
+will be
+written in
+log.txt
+as proof that
+my C program executes
+exactly what is necessary.

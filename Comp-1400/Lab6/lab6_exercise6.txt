@@ -1,0 +1,26 @@
+A)
+Output:
+Hi. This is case 0
+Hi. This is case 1
+
+Questions:
+- Case 2 is not selected since the variable i is set to zero at the beginning and immediately
+  goes to case 0 which will proceed to case 1 after all the code in case 0 is executed, and then stop
+  after executing all of case 0 and 1. Afterwards the variable i would have a value of 2 meaning the condition
+  in the while loop will not be met, therefore not executing case 2.
+
+- There will be only one iteration of the while loop in part A.
+
+B)
+Output:
+Hi. This is case 0
+Hi. This is case 1
+
+Questions:
+- Case 2 is not selected since the variable i is set to zero at the beginning and immediately
+  goes to case 0, after executing all of case 0, the loop will restart due to the break.
+  i will also be updated to a value of 1, meaning it will execute case 1. Afterwards, the loop will
+  be terminated after executing all of case 1, and the variable i will have an updated value of 2.
+  This will make the condition in the while loop false meaning case 2 will not be selected whatsoever.
+
+- There will be two iterations of the while loop in part A. First one will execute case 0, second one will execute case 1, and then stop.

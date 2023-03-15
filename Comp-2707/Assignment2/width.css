@@ -1,0 +1,10 @@
+table {
+    width: 1920px;
+    background-color: lightblue;
+    font-family: cursive;
+}
+
+body {
+    margin-left: 30px;
+    background-color: lightgrey;
+}

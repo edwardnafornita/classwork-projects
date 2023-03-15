@@ -1,0 +1,53 @@
+terminal PLUS, MINUS, TIMES, DIVIDE, QUOTEDSTRING, LPAREN, RPAREN, WRITE, READ, IF, ELSE, RETURN, BEGIN, END, MAIN, CONDITIONAL, SEMICOLON, COMMA, TYPEDEFS, ASSIGN, IDENTIFIER;
+terminal NUMBER;
+
+non terminal expr, if_statement, assignment, parameters, parameter, code_block, statements, local_variable, return_statement, write_statement, read_statement, method_declaration, math_parameters, main_block;
+non terminal Integer program;
+
+precedence left PLUS, MINUS;
+precedence left TIMES, DIVIDE;
+precedence left ELSE;
+
+program ::= method_declaration {: RESULT = 1; :} | program:e method_declaration {: RESULT = e + 1; :};
+
+method_declaration ::= TYPEDEFS MAIN IDENTIFIER LPAREN parameters RPAREN code_block {: :}
+    | TYPEDEFS IDENTIFIER LPAREN parameters RPAREN code_block {: :};
+
+parameters ::= {: :} | parameter {: :} | parameters COMMA parameter {: :};
+parameter ::= TYPEDEFS IDENTIFIER {: :};
+
+code_block ::= BEGIN main_block END {: :};
+main_block ::= statements {: :} | main_block statements {: :};
+
+local_variable ::= TYPEDEFS IDENTIFIER SEMICOLON {: :} | TYPEDEFS assignment {: :};
+
+assignment ::= IDENTIFIER ASSIGN expr SEMICOLON {: :}
+    | IDENTIFIER ASSIGN QUOTEDSTRING SEMICOLON {: :}; 
+
+return_statement ::= RETURN expr SEMICOLON {: :};
+
+if_statement ::= IF LPAREN IDENTIFIER expr CONDITIONAL expr IDENTIFIER RPAREN statements {: :}
+    | IF LPAREN expr CONDITIONAL expr RPAREN statements ELSE statements {: :};
+
+write_statement ::= WRITE LPAREN expr COMMA QUOTEDSTRING RPAREN SEMICOLON {: :};
+
+read_statement ::= READ LPAREN IDENTIFIER COMMA QUOTEDSTRING RPAREN SEMICOLON {: :};
+
+expr ::= expr PLUS expr {: :}  
+    | expr MINUS expr {: :} 
+    | expr TIMES expr {: :}
+    | expr DIVIDE expr {: :}
+    | IDENTIFIER LPAREN math_parameters RPAREN {: :}
+    | IDENTIFIER {: :}
+    | NUMBER {: :};
+
+
+statements ::= code_block {: :} 
+    | local_variable {: :} 
+    | assignment {: :} 
+    | return_statement {: :} 
+    | if_statement {: :} 
+    | write_statement {: :} 
+    | read_statement {: :};
+
+math_parameters ::= {: :} | math_parameters COMMA expr {: :} | expr {: :};
