@@ -5,8 +5,8 @@ public class Heap {
 
     public Heap(int size) {
         this.size = size;
-        index = -1;
-        heap = new int[size];
+        this.index = -1;
+        this.heap = new int[size];
     }
 
     public void insert(int value) {
@@ -52,7 +52,7 @@ public class Heap {
 
         int currentIndex = 0;
 
-        while (index <= lastIndex) {
+        while (currentIndex <= lastIndex) {
             int leftChild = (currentIndex * 2) + 1, rightChild = (currentIndex * 2) + 2;
 
             if (leftChild > lastIndex) {
@@ -68,7 +68,7 @@ public class Heap {
                 valueToSwap = rightChild;
             }
 
-            if (heap[currentIndex] < valueToSwap) {
+            if (heap[currentIndex] < heap[valueToSwap]) {
                 break;
             }
             int temp = heap[valueToSwap];
