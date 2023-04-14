@@ -1,0 +1,141 @@
+<!-- * Next Steps: 
+TODO: PHP Backend Stuffs: Cart Function, Login/Sign Up, Database Connection, Student/Instructor/Admin Views (Very basic interfaces nothing complex)
+* -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Wherever, Whenever | Forte Education</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- header section starts -->
+    <header class="header">
+        <section class="flex">
+            <a href="#home" class="logo"><img src="imgs/logo-no-background.png" alt="Logo: FORTEEDUCATION"></a>
+
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="html/courses.html">Courses</a>
+                <a href="#contact">Contact</a>
+                <a href="html/login.html">Sign Up/Login</a>
+            </nav>
+
+            <div id="menu" class="fas fa-bars"></div>
+        </section>
+    </header>
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+    <section class="home" id="home">
+        <div class="content">
+            <h1>Forte Education</h1>
+            <h3>Modelled For Academic Excellence</h3>
+        </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- about section starts -->
+    <section class="site-content" id="about">
+        <div class="about-content">
+            <center><img src="imgs/about.png" alt="About"></center>
+            <h1>About</h1>
+            <br><br>
+            <p>
+                Forte Education is an online e-learning platform aimed at teaching students valuable information that can be applied in real-world jobs, 
+                regardless of their level. Our mission is to establish a strong connection between instructors and students, creating an engaging learning experience. 
+                Our platform offers a wide range of courses, designed to equip students with practical skills that can lead to career advancement. 
+                We are committed to providing high-quality education, accessible to everyone, anywhere, and at any time.
+            </p>
+        </div>
+
+        <section class="courses" id="courses">
+            <div class="courses-content">
+                <h1>Start learning with some of our curated courses</h1>
+            </div>
+
+        <!-- courses section starts -->
+            <div class="curated-courses">
+                <div class="selected-courses">
+                    <a href="html/webdesign.html" title="Introduction to Webdesign">
+                        <img src="imgs/web-design-courses-image-edited.jpg" alt="Webdesign course">
+                    </a>
+                    <a href="html/webdesign.html"><h3>Introduction to Webdesign</h3></a>
+                </div>
+                <div class="selected-courses">
+                    <a href="html/mathematics.html" title="Advanced Mathematics for Computer Science">
+                        <img src="imgs/mathematics.jpg" alt="Advanced Mathematics">
+                    </a>
+                    <a href="html/mathematics.html"><h3>Advanced Mathematics</h3></a>
+                    
+                </div>
+                <div class="selected-courses">
+                    <a href="html/cpp.html" title="C++: Beginner to Intermediate">
+                        <img src="imgs/c++.png" alt="">
+                    </a>
+
+                    <a href="html/cpp.html"><h3>C++: Beginner to Intermediate</h3></a>
+                </div>
+                <div class="selected-courses">
+                    <a href="html/gamedev.html" title="Unity: Game Development">
+                        <img src="imgs/game-dev.jpg" alt="Game Development Using Unity">
+                    </a>
+
+                    <a href="html/gamedev.html"><h3>Unity: Game Development</h3></a>
+                </div>
+            </div>
+        </section>
+        <!-- courses section ends -->
+    </section>
+    <!-- about section ends -->
+    <br><br><br><br>
+    <!-- contact section starts -->
+    <section class="contact" id="contact">
+        <h3>Contact Us!</h3>
+        <div class="container">
+            <form action="https://formspree.io/f/xgebpayn" method="POST">
+                <label for="name">Name</label>
+                <br>
+                <input type="text" id="name" name="name" placeholder="e.g: John Smith">
+                <br>
+                <label for="email">Email</label>
+                <br>
+                <input type="text" id="email" name="email" placeholder="mail@example.com">
+                <br>
+                <label for="inquiry">Reason for Inquiry</label>
+                <br>
+                <select name="inquiry" id="inquiry">
+                    <option value="registration">Registration</option>
+                    <option value="producthelp">Inquiries about Courses (e.g., content, instructors, etc) </option>
+                    <option value="billing">Billing Information & Refunds</option>
+                    <option value="other">Other Inquiries</option>
+                </select>
+                <br>
+                <label for="subject">Subject</label>
+                <br>
+                <textarea name="subject" id="subject" placeholder="Type your inquiry here..."></textarea>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+    <!-- contact section ends -->
+
+    <!-- footer start -->
+    <div class="footer">
+        <p>&copy; 2023 Forte Education. All rights reserved.</p>
+    </div>
+    <!-- footer end -->
+    <!-- custom js file link -->
+    <script src="js/script.js"></script>
+</body>
+</html>
